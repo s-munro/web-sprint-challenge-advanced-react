@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from '../hooks/useForm';
 
 const initialValue = {
@@ -15,12 +15,10 @@ const initialValue = {
 // and replace the necessary stateful logic from CheckoutForm with the hook
 
 const CheckoutForm = (props) => {
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  //Dear instructor: I'm unsure if I should move this ^ to the useForm too, but it seems like it's fine to stay since it may be unique to this particular form.
+  // const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  //Dear instructor: I wasn't sure if I should move showsuccessmessage to useForm or not, since it seemed unique to this particular form and page.  Regardless, I did just incase I was overthinking it.  it can be found in useForm
 
-
-
-  const [values, handleChanges] = useForm(initialValue);
+  const [values, handleChanges, showSuccessMessage, setShowSuccessMessage] = useForm(initialValue);
 
   const handleSubmit = (e) => {
     e.preventDefault();
